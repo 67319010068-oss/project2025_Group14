@@ -1,0 +1,170 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* --- Header Section --- */
+header {
+    background-color: #a00000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.logo  {
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* Main content area */
+.content-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Services section styles */
+.services-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.service-item {
+    text-align: center;
+    width: 250px;
+}
+
+.service-icon {
+    width: 200px;
+    height: 200px;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Price list box styles */
+.price-list-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.price-list-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.price-list-header p {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+}
+
+.column-1 {
+    width: 25%;
+}
+
+.note-col {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.note-col ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.note-col li {
+    margin-bottom: 5px;
+}
+
+/* Small adjustments for table body cells */
+
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #333;
+}
+
+.contact-card {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.contact-card h2 {
+    color: #ddd;
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.contact-card .contact-info {
+    margin: 15px 0;
+}
+
+.contact-card .social-media img {
+    width: 100px;
+    height: 100px;
+}
+

@@ -1,0 +1,183 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* --- Header Section --- */
+header {
+    background-color: #a00000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.header-logo img {
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* --- Main Content Section --- */
+main {
+    padding: 0; /* เปลี่ยน padding ให้เป็น 0 แล้วค่อยจัดการ padding ภายในแต่ละส่วน */
+    display: flex;
+    flex-direction: column; /* จัดเรียงส่วนย่อยใน main เป็นแนวตั้ง */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+}
+
+.content-container {
+    width: 80%;
+    max-width: 960px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 50px; /* เพิ่มระยะห่างจาก header */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px; /* เพิ่มระยะห่างจากส่วน gallery */
+}
+
+.content-container p {
+    line-height: 1.6;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.content-container ol {
+    margin-top: 0;
+}
+
+.content-container ol li {
+    margin-bottom: 5px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+/* --- Image Gallery Section --- */
+.image-gallery {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 20px;
+    padding: 20px;
+    width: 100%; /* ให้ gallery เต็มความกว้าง */
+    max-width: 1000px; /* จำกัดความกว้างสูงสุด */
+    box-sizing: border-box; /* ให้ padding ไม่เพิ่มขนาดโดยรวม */
+    margin-bottom: 40px; /* เพิ่มระยะห่างจากส่วน contact */
+}
+
+.image-gallery img {
+    width: 30%; /* กำหนดความกว้างเป็น 30% เพื่อให้มี 3 รูปต่อแถว */
+    max-width: 300px; /* จำกัดความกว้างสูงสุด */
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px; /* เพิ่มขอบมนเล็กน้อย */
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 20px; /* เพิ่มระยะห่างระหว่างการ์ด */
+    padding:20px; /* เพิ่ม padding ทั้งด้านบนและล่าง */
+    background-color: #333;
+    width: 100%; /* ให้ section เต็มความกว้าง */
+    box-sizing: border-box;
+}
+
+.contact-card {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+
+.contact-card h2 {
+    color: #ddd;
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.contact-card .contact-info {
+    margin: 15px 0;
+}
+
+.contact-card .social-media img {
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .content-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-gallery img {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .contact-card {
+        width: 90%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+}

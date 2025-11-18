@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRP Engineering & Trading Co., Ltd.</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <img src="image/VRP_logo_white.png" alt="VRP Logo" class="logo">
+        </div>
+       <nav>
+            <ul>
+            <li><a href="page1.html">เกี่ยวกับวีอาร์พี</a></li>
+            <li><a href="page2.html">ติดต่อวีอาร์พี</a></li>
+            <li><a href="page3.html">บริการและราคาติดตั้ง</a></li>
+            <li><a href="page4.html">จองคิวรถ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>VRP ENGINEERING & TRADING CO., LTD.</h2>
+                <p>ระบบจองคิวรถออนไลน์</p>
+            </div>
+            <h3>จองคิวรถ</h3>
+            <form id="queueForm">
+                <div class="form-group">
+                    <label for="name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="name" name="name" placeholder="กรอกชื่อ-นามสกุล" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0XX-XXX-XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="license-plate">รูป/รถ/ทะเบียน</label>
+                    <input type="text" id="license-plate" name="licensePlate" placeholder="กรอกรูป/รถ/ทะเบียน" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">บริการ</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>เลือกบริการ</option>
+                        <option value="service1">ซ่อมบำรุงหลังการติดตั้ง</option>
+                        <option value="service2">ตรวจสภาพ/เช็คระยะ</option>
+                        <option value="service3">ติดตั้งแก๊ส LPG/NGV</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button" id="submitBtn">จองคิวรถ</button>
+                <p class="form-note">กรุณากรอกข้อมูลที่อยู่ด้านบนให้ครบถ้วน</p>
+            </form>
+            <div id="statusMessage"></div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('queueForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // ป้องกันการรีเฟรชหน้าเว็บ
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const statusMessage = document.getElementById('statusMessage');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // แสดงสถานะ "กำลังส่งข้อมูล..." และปิดใช้งานปุ่ม
+            submitBtn.disabled = true;
+            statusMessage.textContent = 'กำลังส่งข้อมูล...';
+            statusMessage.style.color = '#555';
+
+            // แทนที่ด้วย URL จาก Google Apps Script ที่คุณคัดลอกมา
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbyvgQfHK70licXJFJveRUVJmPZ1wfsJicDAgXTWrA2_oV3Jj-YV_uNknaz_QN5n4QV6/exec'; 
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    statusMessage.textContent = 'จองคิวสำเร็จแล้ว! ขอบคุณที่ใช้บริการ';
+                    statusMessage.style.color = 'green';
+                    form.reset(); // ล้างข้อมูลในฟอร์ม
+                } else {
+                    statusMessage.textContent = 'เกิดข้อผิดพลาดในการจองคิว โปรดลองอีกครั้ง';
+                    statusMessage.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                statusMessage.textContent = 'เกิดข้อผิดพลาดในการเชื่อมต่อ โปรดลองอีกครั้ง';
+                statusMessage.style.color = 'red';
+            })
+            .finally(() => {
+                submitBtn.disabled = false; // เปิดใช้งานปุ่มอีกครั้ง
+            });
+        });
+    </script>
+   <br>
+    <br>
+       <center>
+      <a href="index.html">
+        <img src="image/back.png" alt="back"style="width:50px;">
+</a>
+    </center>
+    <br>
+    <br>
+    <br>
+        <div class="contact-section">
+            <div class="contact-card">
+                <h2>วีอาร์พี พร้อมให้บริการคุณ</h2>
+                <p><strong>_____________________________________________________</strong></p>
+                <p>99/99 หมู่1 ถนนบายพาส สาย36 ตำบลเชิงเนิน อำเภอเมืองระยอง จังหวัดระยอง 21000</p>
+                <div class="contact-info">
+                    <p><strong>Tel :</strong> 085-087-2332</p>
+                    <p><strong>E-mail :</strong> vrp.engineering@gmail.com</p>
+                </div>
+                <div class="social-media">
+                    <p><strong>QR Code :</strong></p>
+                    <img src="image/qr_code.png.jpg" alt="QR Code">
+                </div>
+            </div>
+            <div class="contact-card">
+                <h2>ติดต่อสอบถาม</h2>
+                <p><strong>_____________________________________________________</strong></p>
+                <p><strong>Tel:</strong> 085-087-2332</p>
+                <p><strong>E-mail:</strong> vrp.engineering@gmail.com</p>
+                <p><strong>เวลาทำการ :</strong></p>
+                <p>เปิดให้บริการ (จันทร์-เสาร์)</p>
+                <p>เวลา 8.30-17.00น. (หยุดวันอาทิตย์)</p>
+            </div>
+            <div class="contact-card">
+                <h2>ติดตามเรา</h2>
+                <p><strong>_____________________________________________________</strong></p>
+                <a href="https://www.facebook.com/share/19sUKYsGmw/?mibextid=wwXIfr">
+  <img src="image/image4.jpg" alt="Description of the image"style="width:280px;">
+</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
