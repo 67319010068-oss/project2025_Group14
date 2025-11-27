@@ -37,11 +37,10 @@ if(isset($_POST['add_cart'])){
     <img src="assets/images/<?php echo $product['image']; ?>" alt="">
     <h2><?php echo $product['name']; ?></h2>
     <p><?php echo $product['description']; ?></p>
-    <p>ราคา: <?php echo number_format($product['price'],2); ?> บาท</p>
-    <form method="POST">
-        <input type="number" name="quantity" value="1" min="1">
-        <button type="submit" name="add_cart">เพิ่มใส่ตะกร้า</button>
-    </form>
-</main>
+    <form action="add_to_cart.php" method="post">
+    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+    <input type="number" name="qty" value="1" min="1">
+    <button type="submit">เพิ่มใส่ตะกร้า</button>
+</form>
 </body>
 </html>
