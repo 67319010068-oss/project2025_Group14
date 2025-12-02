@@ -1,0 +1,147 @@
+/* style.css - ธีมโทนชมพูขาวน่ารัก */
+body {
+    font-family: "Prompt", sans-serif;
+    background: #fdf6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    color: #ff4b8b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #ff4b8b;
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #ff6aa2, #ff3d80);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(255, 77, 129, 0.35);
+    opacity: 0.95;
+}
+
+.btn-secondary {
+    background: #ffe0ec;
+    color: #ff4b8b;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table th, .table td {
+    border-bottom: 1px solid #f0e1ea;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table th {
+    background: #ffe6f1;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.status-pending { background:#ffe6b3; color:#c27c00; }
+.status-paid { background:#d1ffe3; color:#007a3b; }
+.status-processing { background:#e0f0ff; color:#1f5fbf; }
+.status-shipping { background:#fff0d8; color:#cf6f00; }
+.status-delivered { background:#d6ffe0; color:#0f8a3b; }
+.status-cancelled { background:#ffd6dd; color:#c81e3a; }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #f0cfe0;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr;
+    gap: 25px;
+}
+
+.summary-card {
+    background: #fff7fb;
+    border-radius: 16px;
+    padding: 15px 18px;
+    border: 1px dashed #f7c4da;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.summary-row.total {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.text-center { text-align:center; }
+.text-right { text-align:right; }
+
+small { color:#777; }

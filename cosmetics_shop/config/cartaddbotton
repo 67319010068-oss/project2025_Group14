@@ -1,0 +1,20 @@
+<button class="add-to-cart" data-id="12">เพิ่มลงตะกร้า</button>
+
+<script>
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', function() {
+        let product_id = this.dataset.id;
+        
+        fetch("add_to_cart.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "product_id=" + product_id + "&quantity=1"
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert(data.message);
+            updateCartBadge(); // อัปเดตจำนวนในไอคอนตะกร้า
+        });
+    });
+});
+</script>
